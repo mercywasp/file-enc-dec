@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Hugo 0.83.1" />
+  <title>File Encryption</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+  <!-- Bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/form-validation.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light">
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>File Encryption</h2>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Fill in your details below to encrypt a file;</span>
+          </h4>
+          <form id="enc-form" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" id="username" placeholder="Username" required />
+                  <div class="invalid-feedback">
+                    Your username is required.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="password" class="form-label">Password
+                  <span class="text-muted">(Enter a long one)</span></label>
+                <input type="password" class="form-control" id="password" placeholder="***********" />
+                <div class="invalid-feedback">
+                  Please enter a valid password.
+                </div>
+              </div>
+
+              <hr class="my-4" />
+
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Select file to encrypt</label>
+                <input id="enc-file" type="file" class="form-control" aria-label="file example" required />
+                <div class="invalid-feedback">
+                  Example invalid form file feedback
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success" id="encrypt-btn">
+                Encrypt
+              </button>
+              <a class="btn btn-success" id="enc-download">Download</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="position-absolute bottom-0 start-50 translate-middle-x text-muted text-center text-small">
+      <p class="mb-1">Copyright &copy; 2021</p>
+    </footer>
+  </div>
+
+  <script src="assets/js/form-validation.js"></script>
+</body>
+
+<!-- Include the AES algorithm of the crypto library -->
+<script src="assets/js/aes.js"></script>
+
+<!-- JS Script -->
+<script src="assets/js/script.js"></script>
+
+</html>
